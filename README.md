@@ -21,11 +21,11 @@ Hi! MyAlert is an alertview. Shortly , show notifications in the app. It is simp
    ## CocoaPods
    You can use [CocoaPods](http://cocoapods.org/) to install `myAlert` by adding it to your `Podfile`:
 
-    ```ruby
+   ```ruby
     platform :ios, '9.0'
     use_frameworks!
     pod 'myAlert'
-    ```
+   ```
 
   ## Manually
   1. Download and drop ```MyAlertController.swift``` in your project.  
