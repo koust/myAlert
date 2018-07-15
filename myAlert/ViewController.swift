@@ -9,17 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let myAlert = MyAlertController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        myAlert.yourView = self.view
+        myAlert.bgColor = UIColor.red
+        myAlert.textColor = UIColor.white
+        myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title",delay:3)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func pressToClose(_ sender: Any) {
+        myAlert.close()
     }
-
-
+    
+    @IBAction func pressToShow(_ sender: Any) {
+        myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title")
+    }
 }
 

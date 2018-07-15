@@ -14,6 +14,7 @@
 		5BA4EB3B20FB97DB003EC8AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA4EB3920FB97DB003EC8AF /* LaunchScreen.storyboard */; };
 		5BA4EB4620FB97DB003EC8AF /* myAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4EB4520FB97DB003EC8AF /* myAlertTests.swift */; };
 		5BA4EB5120FB97DB003EC8AF /* myAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4EB5020FB97DB003EC8AF /* myAlertUITests.swift */; };
+		5BA4EB5F20FB9815003EC8AF /* MyAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4EB5E20FB9815003EC8AF /* MyAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		5BA4EB4C20FB97DB003EC8AF /* myAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA4EB5020FB97DB003EC8AF /* myAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAlertUITests.swift; sourceTree = "<group>"; };
 		5BA4EB5220FB97DB003EC8AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BA4EB5E20FB9815003EC8AF /* MyAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				5BA4EB3720FB97DB003EC8AF /* Assets.xcassets */,
 				5BA4EB3920FB97DB003EC8AF /* LaunchScreen.storyboard */,
 				5BA4EB3C20FB97DB003EC8AF /* Info.plist */,
+				5BA4EB5E20FB9815003EC8AF /* MyAlertController.swift */,
 			);
 			path = myAlert;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA4EB3320FB97D9003EC8AF /* ViewController.swift in Sources */,
+				5BA4EB5F20FB9815003EC8AF /* MyAlertController.swift in Sources */,
 				5BA4EB3120FB97D9003EC8AF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ZTA5QN97Z;
 				INFOPLIST_FILE = myAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -448,6 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ZTA5QN97Z;
 				INFOPLIST_FILE = myAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

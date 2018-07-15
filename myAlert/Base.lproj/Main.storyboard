@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +13,36 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="myAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdS-ig-1ID">
+                                <rect key="frame" x="15" y="318.5" width="345" height="30"/>
+                                <state key="normal" title="Press To Close"/>
+                                <connections>
+                                    <action selector="pressToClose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NME-F1-8GW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUy-rb-3aq">
+                                <rect key="frame" x="15" y="363.5" width="345" height="30"/>
+                                <state key="normal" title="Press To Show"/>
+                                <connections>
+                                    <action selector="pressToShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="01N-Ny-Z04"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tdS-ig-1ID" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="1j4-M8-e9A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qUy-rb-3aq" secondAttribute="trailing" constant="15" id="57J-Fp-slc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tdS-ig-1ID" secondAttribute="trailing" constant="15" id="9gA-Dz-eZT"/>
+                            <constraint firstItem="qUy-rb-3aq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="kav-yO-bqG"/>
+                            <constraint firstItem="tdS-ig-1ID" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qWx-YF-FGK"/>
+                            <constraint firstItem="tdS-ig-1ID" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s0h-kL-X99"/>
+                            <constraint firstItem="qUy-rb-3aq" firstAttribute="top" secondItem="tdS-ig-1ID" secondAttribute="bottom" constant="15" id="uuu-dm-OEH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
