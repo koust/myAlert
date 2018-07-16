@@ -1,6 +1,7 @@
 ![Xcode 9.0+](https://img.shields.io/badge/Xcode-9.0%2B-blue.svg)
 ![iOS 9.0+](https://img.shields.io/badge/iOS-9.0%2B-blue.svg)
 ![Swift 4.0+](https://img.shields.io/badge/Swift-4.0%2B-orange.svg)
+![CocoaPods](https://img.shields.io/cocoapods/v/AFNetworking.svg)
 [![Build Status](https://travis-ci.org/TBXark/PinterestSegment.svg?branch=master)](https://travis-ci.org/TBXark/PinterestSegment)
 
 # Welcome to MyAlert!
@@ -33,7 +34,7 @@ Hi! MyAlert is an alertview. Shortly , show notifications in the app. It is simp
 
 # Usage 
 
-```sh
+```swift
     let myAlert = MyAlertController()
      myAlert.yourView = self.view
      myAlert.bgColor = UIColor.red
@@ -44,5 +45,6 @@ Hi! MyAlert is an alertview. Shortly , show notifications in the app. It is simp
 
 ## Release History
 
-* 1.0.0
+* 1.0
   first commit
+  
