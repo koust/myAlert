@@ -15,9 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         myAlert.yourView = self.view
-        myAlert.bgColor = UIColor.red
+        myAlert.bgColor = UIColor.orange
         myAlert.textColor = UIColor.white
-        myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title",delay:3)
+        myAlert.fontName = "Helvetica"
+        myAlert.subTitleFontSize = 14
+        myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title",mImage:UIImage(named:"info")!,delay:3)
     }
 
     @IBAction func pressToClose(_ sender: Any) {
