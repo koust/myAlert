@@ -42,7 +42,45 @@ Hi! MyAlert is an alertview. Shortly , show notifications in the app. It is simp
      myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title",delay:3)
 ```
 
+## Features
 
+   ### The Basics
+   
+   ```swift
+     myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title")
+   ```
+   
+   ### Delay
+   
+   Notification closure time can be set
+   
+   ```swift
+     myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title",delay:3)
+   ```   
+   ### Image
+   
+   You can be add image to alertView
+   
+   ```swift
+     myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title",mImage:UIImage(named:"info")!,delay:3)
+   ```     
+   
+   ### Close
+   
+   ```swift
+     myAlert.close()
+   ```   
+   ### Customization
+   
+   ```swift
+    public var bgColor
+    public var textColor
+    public var fontName:String
+    public var titleFontSize: CGFloat
+    public var subTitleFontSize: CGFloat
+    public var alertRadius:CGFloat
+    public var yourView: UIView?
+   ```   
 ## Release History
 
 * 1.0
