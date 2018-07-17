@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "myAlert"
-s.version      = "1.0"
+s.version      = "1.0.1"
 s.summary      = "MyAlert is an alertview. Shortly , show notifications in the app. It is simple to use and easy to develop."
 s.license      = { :type => 'MIT License', :file => 'LICENSE' }
 s.homepage     = "https://github.com/koust/myAlert"
