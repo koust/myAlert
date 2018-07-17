@@ -22,9 +22,10 @@ public class MyAlertController: UIViewController {
     public var yourView: UIView?
     
     private var viewHeight:Int              = 80
-    private var myImageWidth:CGFloat        = 0
-    private var myImageHeight:CGFloat       = 0
-    private var myImageLeftAnchor:CGFloat   = 0
+    private var myImageWidth:CGFloat        = 32
+    private var myImageHeight:CGFloat       = 32
+    private var myImageLeftAnchor:CGFloat   = 15
+    private var myImageTopAcnchor:CGFloat   = 20
     private var myImage                     = UIImageView()
     private let myView                      = UIView()
     private let myBigTitle                  = UILabel()
@@ -38,20 +39,18 @@ public class MyAlertController: UIViewController {
         myView.clipsToBounds                = true
         myView.tag                          = 100
         
-        
+        myImage.translatesAutoresizingMaskIntoConstraints           = false
         mySubTitle.translatesAutoresizingMaskIntoConstraints        = false
         myBigTitle.translatesAutoresizingMaskIntoConstraints        = false
-        myImage.translatesAutoresizingMaskIntoConstraints           = false
         
         myView.addSubview(myBigTitle)
         myView.addSubview(mySubTitle)
         myView.addSubview(myImage)
-        
         // For Big Title
-        myBigTitle.text                 = bigTitle
-        myBigTitle.textColor            = textColor
-        myBigTitle.textAlignment        = .left
-        myBigTitle.font                 = UIFont(name: fontName, size: titleFontSize)
+        myBigTitle.text                     = bigTitle
+        myBigTitle.textColor                = textColor
+        myBigTitle.textAlignment            = .left
+        myBigTitle.font                     = UIFont(name: fontName, size: titleFontSize)
         
         myBigTitle.topAnchor.constraint(equalTo: myView.topAnchor , constant:15).isActive                  = true
         myBigTitle.leftAnchor.constraint(equalTo: myImage.rightAnchor , constant:15).isActive              = true
@@ -69,12 +68,7 @@ public class MyAlertController: UIViewController {
         mySubTitle.rightAnchor.constraint(equalTo: myView.rightAnchor , constant:10).isActive             = true
         
         // For Image
-   
-        myImage.widthAnchor.constraint(equalToConstant: myImageWidth).isActive                            = true
-        myImage.heightAnchor.constraint(equalToConstant: myImageHeight).isActive                          = true
-        myImage.topAnchor.constraint(equalTo: myView.topAnchor , constant:20).isActive                    = true
-        myImage.leftAnchor.constraint(equalTo: myView.leftAnchor , constant:myImageLeftAnchor).isActive   = true
-        
+
         
         self.yourView?.addSubview(myView)
         
@@ -93,32 +87,45 @@ public class MyAlertController: UIViewController {
         createView(bigTitle: title,subTitle:subtitle)
         closeToDelay(delayTime: delay)
     }
-
-    public func show(title:String,subtitle:String,mImage:UIImage,delay:Int){
-        myImageWidth        = 32
-        myImageHeight       = 32
-        myImageLeftAnchor   = 15
+    
+    public func show(title:String,subtitle:String,mImage:UIImage){
         myImage.image       = mImage
         
+        createView(bigTitle: title,subTitle:subtitle)
+        createImageView(width: myImageWidth, height: myImageHeight, top: myImageTopAcnchor, left: myImageLeftAnchor,isActive: true)
+    }
+
+    public func show(title:String,subtitle:String,mImage:UIImage,delay:Int){
+        myImage.image       = mImage
         
         createView(bigTitle: title,subTitle:subtitle)
+        createImageView(width: myImageWidth, height: myImageHeight, top: myImageTopAcnchor, left: myImageLeftAnchor,isActive: true)
         closeToDelay(delayTime: delay)
     }
     
     public func close(){
         UIView.animate(withDuration: 0.4, delay:0, options: [],animations: {
             self.myView.center.y = CGFloat(-(self.viewHeight*2))
-            
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    if let viewWithTag = self.yourView?.viewWithTag(100) {
-                        viewWithTag.removeFromSuperview()
-                    }
-                }
-            
         },
                 completion: nil
         )
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            if let viewWithTag = self.myView.viewWithTag(100) {
+                viewWithTag.removeFromSuperview()
+            }
+        }
 
+    }
+    
+    
+    private func createImageView(width:CGFloat,height:CGFloat,top:CGFloat,left:CGFloat,isActive:Bool){
+        myImage.widthAnchor.constraint(equalToConstant: width).isActive                            = isActive
+        myImage.heightAnchor.constraint(equalToConstant: height).isActive                          = isActive
+        myImage.topAnchor.constraint(equalTo: myView.topAnchor , constant:top).isActive            = isActive
+        myImage.leftAnchor.constraint(equalTo: myView.leftAnchor , constant:left).isActive         = isActive
+        myImage.layoutIfNeeded()
+        myImage.updateConstraintsIfNeeded()
     }
     
     private func closeToDelay(delayTime:Int){
@@ -133,7 +140,7 @@ public class MyAlertController: UIViewController {
     }
     
     private func swipeToClose(){
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        let swipeUp       = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeUp.direction = .up
         self.myView.addGestureRecognizer(swipeUp)
     }

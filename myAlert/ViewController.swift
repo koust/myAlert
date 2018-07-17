@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         myAlert.textColor = UIColor.white
         myAlert.fontName = "Helvetica"
         myAlert.subTitleFontSize = 14
-        myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title",mImage:UIImage(named:"info")!,delay:3)
     }
 
     @IBAction func pressToClose(_ sender: Any) {
@@ -27,7 +26,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pressToShow(_ sender: Any) {
-        myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title")
+        myAlert.show(title:"For example alert view and title",subtitle:"Here is the sub title",mImage:UIImage(named: "info")!)
     }
 }
 
